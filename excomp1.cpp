@@ -115,7 +115,7 @@ int main(int argc, char* argv[]) {
     system("clear");
 
     if (argc != 2) {
-        std::cerr << "Uso: " << argv[0] << " <arquivo_labirinto>" << std::endl;
+        std::cerr << "Uso: " << argv[0] << " <data/arquivo_labirinto>" << std::endl;
         return 1;
     }
 
