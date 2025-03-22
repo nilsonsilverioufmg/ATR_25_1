@@ -5,6 +5,8 @@
 #include <thread>
 #include <chrono>
 
+
+
 // Representação do labirinto
 using Maze = std::vector<std::vector<char>>;
 
