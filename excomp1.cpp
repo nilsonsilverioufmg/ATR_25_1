@@ -63,7 +63,8 @@ void print_maze() {
 
 // Função para verificar se uma posição é válida
 bool is_valid_position(int row, int col) {
-    return (row >= 0 && row < num_rows && col >= 0 && col < num_cols && (maze[row][col] == 'x' || maze[row][col] == 's'));
+    return (row >= 0 && row < num_rows && col >= 0 && col < 
+        num_cols && (maze[row][col] == 'x' || maze[row][col] == 's'));
 }
 
 // Função principal para navegar pelo labirinto
@@ -100,11 +101,9 @@ bool walk(Position pos) {
         Position next_pos = valid_positions.top();
         valid_positions.pop();
 
-//        std::cout << "Explorando posição: (" << next_pos.row << ", " << next_pos.col << ")" << std::endl;  // Depuração
-
-        // Chama walk recursivamente para a próxima posição
+        // Chama a próxima posição
         if (walk(next_pos)) {
-            return true;  // Se encontrou a saída, propaga a vitória
+            return true;  // Se encontrou a saída, exibe a vitória
         }
     }
 
@@ -114,6 +113,7 @@ bool walk(Position pos) {
 
 int main(int argc, char* argv[]) {
     system("clear");
+
     if (argc != 2) {
         std::cerr << "Uso: " << argv[0] << " <arquivo_labirinto>" << std::endl;
         return 1;
@@ -126,13 +126,11 @@ int main(int argc, char* argv[]) {
     }
 
     bool exit_found = walk(initial_pos);
-
     if (exit_found) {
         std::cout << "Saída encontrada!" << std::endl;
     } else {
         std::cout << "Não foi possível encontrar a saída." << std::endl;
     }
-
  
     return 0;
 }
