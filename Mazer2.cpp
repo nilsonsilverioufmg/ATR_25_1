@@ -7,6 +7,11 @@
 #include <mutex>
 using namespace std;
 
+
+
+
+
+
 // Matriz de char representnado o labirinto
 char** maze; // Voce também pode representar o labirinto como um vetor de vetores de char (vector<vector<char>>)
 
